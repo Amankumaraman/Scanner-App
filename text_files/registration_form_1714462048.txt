@@ -1,0 +1,23 @@
+Registration Form
+Registration Number: : 1234567
+Enquiry Number: : 9876
+Without Enquiry: : Yes
+Class Details
+• Class: Details
+• Date of Birth (DOB): ): 5-25-2008
+Personal Details
+• Student Name: : Rahul
+• Father’s Name: : Anil
+• Mother’s Name: : Sunita
+• Grandfather’s Name: 
+• Prospectus: : 4567890
+• Gender: : Male
+• Nationality: : Indian
+• Mobile Number: 
+• Alternate Mobile Number: 
+• Email Address: Address: rahul@example.com
+Address
+• Pin Code: : 12345
+• Country: : India
+• State: : Maharashtra
+• City: : Mumbai

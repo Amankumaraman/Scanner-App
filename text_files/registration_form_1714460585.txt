@@ -1,0 +1,23 @@
+Registration Form
+Registration Number: 
+Enquiry Number: : 1555
+Without Enquiry: : No
+Class Details
+• Class: Details
+• Date of Birth (DOB): ): 1-11-2002
+Personal Details
+• Student Name: : Radha
+• Father’s Name: : Mahesh
+• Mother’s Name: : Sarah
+• Grandfather’s Name: 
+• Prospectus: : 5698546
+• Gender: : Female
+• Nationality: : indian
+• Mobile Number: 
+• Alternate Mobile Number: 
+• Email Address: Address: radha@example.com
+Address
+• Pin Code: : 79549
+• Country: : india
+• State: : uttrakhand
+• City: : kashipur

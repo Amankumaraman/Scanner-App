@@ -1,0 +1,23 @@
+Registration Form
+Registration Number: : 7894562
+Enquiry Number: : 1555
+Without Enquiry: : No
+Class Details
+� Class: Details
+� Date of Birth (DOB): ): 1-11-1999
+Personal Details
+� Student Name: : Radhasdfdscds
+� Father�s Name: : Maheshdsfdssd
+� Mother�s Name: : Sarah sdfdsfsd
+� Grandfather�s Name: 
+� Prospectus: : 56985465654
+� Gender: : Female
+� Nationality: : indian
+� Mobile Number: 
+� Alternate Mobile Number: 
+� Email Address: Address: radhddsda@example.com
+Address
+� Pin Code: : 795499889
+� Country: : india
+� State: : uttrakhand
+� City: : rampur

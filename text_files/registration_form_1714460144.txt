@@ -1,0 +1,23 @@
+Registration Form
+Registration Number: : 147856622219
+Enquiry Number: : 14478
+Without Enquiry: : Yes/No
+Class Details
+• Class: Details
+• Date of Birth (DOB): : 15-03-2007
+Personal Details
+• Student Name: : Emily Johnson
+• Father’s Name: : Robert Johnson
+• Mother’s Name: : Sarah Johnson
+• Grandfather’s Name: : William Smith
+• Prospectus: : 123456789012
+• Gender: : Female
+• Nationality: : American
+• Mobile Number: .: +1 123-456-7890
+• Alternate Mobile Number: .: +1 987-654-3210
+• Email Address: : emily.johnson@example.com
+Address
+• Pin Code: : 12345
+• Country: : United States
+• State: s
+• City: : Los Angeles

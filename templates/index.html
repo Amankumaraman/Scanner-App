@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Scanner</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff; /* Blue heading color */
+            text-align: center;
+        }
+        #loadingIndicator {
+            display: none;
+        }
+        #errorMessage {
+            display: none;
+        }
+        #result {
+            margin-top: 20px;
+            color: #007bff; /* Blue result text color */
+        }
+        /* Media Query for smaller screens */
+        @media (max-width: 576px) {
+            .container {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Document Scanner</h1>
+    <form id="scanForm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="imageInput">Upload Document</label>
+            <input
+                type="file"
+                class="form-control-file"
+                id="imageInput"
+                accept="image/*"
+                capture="camera"
+            />
+        </div>
+        <button type="submit" class="btn btn-primary">Scan Document</button>
+    </form>
+    <div id="loadingIndicator" class="text-center mt-3">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div>Loading...</div>
+    </div>
+    <div id="errorMessage" class="alert alert-danger mt-3" role="alert">
+        Oops! Something went wrong. Please try again.
+    </div>
+    <div id="result" class="mt-3"></div>
+</div>
+
+<script>
+    document
+        .getElementById("scanForm")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("loadingIndicator").style.display = "block";
+            document.getElementById("errorMessage").style.display = "none";
+            var formData = new FormData();
+            formData.append(
+                "image",
+                document.getElementById("imageInput").files[0]
+            );
+            fetch('{% url "scan_document" %}', {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "X-CSRFToken": document.querySelector(
+                        "input[name=csrfmiddlewaretoken]"
+                    ).value,
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("loadingIndicator").style.display =
+                        "none";
+                    var resultHtml = "<h2>Scanned Form Data:</h2><ul>";
+                    for (var field in data.extracted_data) {
+                        resultHtml += "<li><strong>" + field + ":</strong> " + data.extracted_data[field] + "</li>";
+                    }
+                    resultHtml += "</ul>";
+                    resultHtml += "<h2>API Payload:</h2><pre>" + JSON.stringify(data.api_payload, null, 2) + "</pre>";
+                    document.getElementById("result").innerHTML = resultHtml;
+                })
+                .catch((error) => {
+                    document.getElementById("loadingIndicator").style.display =
+                        "none";
+                    document.getElementById("errorMessage").style.display = "block";
+                    console.error("Error:", error);
+                });
+        });
+</script>
+</body>
+</html>
